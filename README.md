@@ -39,7 +39,8 @@ base_url : \<host>:\<port>
         "phone": "9643807502",
         "role": "admin"
     }
-]
+]<br />
+**CURL Command**: curl -i -H "Accept: application/json" "http://localhost:8000/members/"
 
 #### 2) Create a member:
  **EndPoint** : \<base_url>/members/<br />
@@ -61,7 +62,8 @@ base_url : \<host>:\<port>
         "email": "vidyasagargtm@gmail.com",
         "phone": "9643807502",
         "role": "admin"
-    }
+    }<br/>
+ **CURL Command**: curl -X POST -H "Content-Type:application/json" http://localhost:8000/members/ -d '{"first_name": "Sagar", "last_name": "Kumar", "email": "sagar@gmail.com", "phone": "9643807502", "role": "admin"}'
  
  #### 3) Update a member : 
  **EndPoint** : <base_url>/members/\<pk><br />
@@ -83,7 +85,8 @@ base_url : \<host>:\<port>
         "email": "vidyasagargtm@gmail.com",
         "phone": "9643807502",
         "role": "admin"
-   }
+   }<br />
+ **CURL Command**: curl -H 'Content-Type: application/json' -X PUT -d '{"first_name":"VSG", "last_name":"Singh"}' http://localhost:8000/members/cd0f69de-8d63-4852-b9f2-66b0b56aad92/
   
  #### 4) Update a member : Requires updated parameters only
  **EndPoint** : <base_url>/members/\<pk><br />
@@ -104,8 +107,10 @@ base_url : \<host>:\<port>
        "phone": "9643807502",
        "role": "regular"
   }
+  **CURL Command**: curl -H 'Content-Type: application/json' -X PATCH -d '{"first_name":"Ramesh", "last_name":"Agarwal"}' http://localhost:8000/members/cd0f69de-8d63-4852-b9f2-66b0b56aad92/
  
  #### 5) Delete a member : 
  **EndPoint** : <base_url>/members/\<pk><br />
  **Method** : DELETE<br />
- **Response Code** : 204   
+ **Response Code** : 204<br />
+ **CURL Command**: curl -X DELETE http://localhost:8000/members/783ffc08-392a-412c-b228-71f1513e29c5/
